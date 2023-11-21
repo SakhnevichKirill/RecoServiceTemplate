@@ -7,10 +7,9 @@ from service.settings import get_config
 config = get_config()
 app = create_app(config)
 
-
 if __name__ == "__main__":
+    
+    host = os.getenv("HOST", "0.0.0.0")
+    port = int(os.getenv("PORT", "8000"))
 
-    host = os.getenv("HOST", "127.0.0.1")
-    port = int(os.getenv("PORT", "8080"))
-
-    uvicorn.run(app, host=host, port=port)
+    uvicorn.run("main:app", reload=True, host=host, port=port)

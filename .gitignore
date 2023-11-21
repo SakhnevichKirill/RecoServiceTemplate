@@ -66,4 +66,7 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-
+# model data
+recsys_course.zip
+data/
+recsys/
